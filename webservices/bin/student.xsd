@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- declaration tag -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.info/inetsolv/students"
+	xmlns:tns="http://www.info/inetsolv/students" elementFormDefault="qualified">
+
+	<element name="students" type="tns:studentstype" />
+	<complexType name="studentstype">
+		<sequence>
+			<element name="student" type="tns:studentType" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<complexType name="studentType">
+		<sequence>
+			<element name="sno" type="int" />
+			<element name="sname">
+				<simpleType>
+					<restriction base="string">
+						<minLength value="1" />
+						<maxLength value="8" />
+					</restriction>
+				</simpleType>
+			</element>
+		</sequence>
+	</complexType>
+</schema>
